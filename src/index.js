@@ -29,3 +29,16 @@ const todolists = [
     index: 5,
   },
 ];
+const todoListElement = document.querySelector('.todo-container');
+window.onload = () => {
+  todolists.forEach((todo) => {
+    const todoListHTML = `<li class="todo-item">
+                              <div class="todo-content">
+                                <input type="checkbox" name="checkbox" value = ${todo.index}/>
+                                <p>${todo.description}</p>
+                              </div>
+                             <button type="button"><i class="fa fa-ellipsis-v"></i></button>
+                          </li>`;
+    todoListElement.insertAdjacentHTML('beforeend', todoListHTML);
+  });
+};
