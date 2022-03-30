@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-import _ from 'lodash';
 import './style.css';
 
 const todolists = [
@@ -9,22 +7,22 @@ const todolists = [
     index: 2,
   },
   {
-    description: 'This is second descriptions',
+    description: 'This is second descriptions.',
     completed: false,
     index: 3,
   },
   {
-    description: 'This is third descriptions',
+    description: 'This is third descriptions.',
     completed: false,
     index: 4,
   },
   {
-    description: 'This is fourth descriptions',
+    description: 'This is fourth descriptions.',
     completed: false,
     index: 5,
   },
   {
-    description: 'This is fifth descriptions',
+    description: 'This is fifth descriptions.',
     completed: false,
     index: 6,
   },
