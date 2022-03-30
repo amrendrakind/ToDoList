@@ -33,6 +33,14 @@ move into project directory
 
 `cd ToDoList`
 
+Install  Project dependancies using `NPM`
+
+`npm install`
+
+launch project locally with 
+
+`npm start`
+
 ## Author
 
 👤 **Amrendra K**

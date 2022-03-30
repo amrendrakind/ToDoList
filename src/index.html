@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>To Do List</title>
 </head>
+
 <body>
-    <section>
-        <h1>Today's To Do</h1>
-        <div>
-            <input type="text" name="taskList" id="taskList" placeholder="Add to do's to your list.">
+    <section class="container">
+        <div class="todo-headline">
+            <h1>Today's To Do</h1>
+            <button type="button"><i class="fa fa-refresh"></i></button>
         </div>
+        <input class="taskList" type="text" name="taskList" id="taskList" placeholder="Add to your list...">
+        <ul class="todo-container">
+            <li class="todo-item">
+                <div class="todo-content">
+                    <input type="checkbox" name="checkbox" />
+                    <p>wash the dishes</p>
+                </div>
+                <button type="button"><i class="fa fa-ellipsis-v"></i></button>
+            </li>
+            <li class="todo-item">
+                <div class="todo-content">
+                    <input type="checkbox" name="checkbox" />
+                    <p>complete To Do list project</p>
+                </div>
+                <button type="button"><i class="fa fa-ellipsis-v"></i></button>
+            </li>
+        </ul>
+        <button class="clear-btn" type="button">Clear all completed</button>
     </section>
 </body>
+
 </html>
