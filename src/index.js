@@ -1,13 +1,31 @@
+/* eslint-disable no-unused-vars */
 import _ from 'lodash';
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
-}
-
-document.body.appendChild(component());
+const todolists = [
+  {
+    description: 'This is first descriptions.',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'This is second descriptions',
+    completed: false,
+    index: 2,
+  },
+  {
+    description: 'This is third descriptions',
+    completed: false,
+    index: 3,
+  },
+  {
+    description: 'This is fourth descriptions',
+    completed: false,
+    index: 4,
+  },
+  {
+    description: 'This is fifth descriptions',
+    completed: false,
+    index: 5,
+  },
+];
