@@ -6,27 +6,27 @@ const todolists = [
   {
     description: 'This is first descriptions.',
     completed: false,
-    index: 1,
+    index: 2,
   },
   {
     description: 'This is second descriptions',
     completed: false,
-    index: 2,
+    index: 3,
   },
   {
     description: 'This is third descriptions',
     completed: false,
-    index: 3,
+    index: 4,
   },
   {
     description: 'This is fourth descriptions',
     completed: false,
-    index: 4,
+    index: 5,
   },
   {
     description: 'This is fifth descriptions',
     completed: false,
-    index: 5,
+    index: 6,
   },
 ];
 const todoListElement = document.querySelector('.todo-container');

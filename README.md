@@ -33,9 +33,13 @@ move into project directory
 
 `cd ToDoList`
 
-Install  Project dependancies using `NPM`
+Install  Project dependancies using `NPM` 
 
 `npm install`
+
+build with the command 
+
+`npm run build`
 
 launch project locally with 
 
