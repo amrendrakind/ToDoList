@@ -111,6 +111,11 @@ const addTodo = () => {
     saveData();
     desc.value = null;
   }
+  todoList = todoList.map(
+    (todo, index) => (
+      { completed: todo.completed, description: todo.description, index: index + 1 }
+    ),
+  );
 };
 
 const saveEdit = () => {
