@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-loop-func */
 let todoList = [];
 let isEditing = false;
@@ -31,7 +32,6 @@ const removeTodoList = (indexID) => {
       { completed: todo.completed, description: todo.description, index: index + 1 }
     ),
   );
-  // eslint-disable-next-line no-use-before-define
   displayToDo();
 };
 
@@ -45,14 +45,23 @@ const toggleToDoStatus = (todo) => {
   saveData();
 };
 
-const clearCompletedList = () => {
+const clearCheckBox = () => {
   const completedTodoList = todoList.filter((todo) => todo.completed);
-  if (completedTodoList.length > 0) {
-    completedTodoList.forEach((todo) => {
-      removeTodoList(todo.index);
-      clearCompletedList();
-    });
-  }
+  completedTodoList.forEach((todoItem) => {
+    todoItem.completed = false;
+  });
+  saveData();
+};
+
+const clearCompletedList = () => {
+  todoList = todoList.filter((todo) => !todo.completed);
+  todoList = todoList.map(
+    (todo, index) => (
+      { completed: todo.completed, description: todo.description, index: index + 1 }
+    ),
+  );
+  saveData();
+  displayToDo();
 };
 
 const displayToDo = () => {
@@ -72,12 +81,15 @@ const displayToDo = () => {
     todoCheckboxElement.setAttribute('value', todoList[i].index);
     todoCheckboxElement.checked = todoList[i].completed;
 
-    todoContentElement.addEventListener('change', () => {
-      toggleToDoStatus(todoList[i]);
-    });
-
     const todoDescriptionElement = document.createElement('p');
     todoDescriptionElement.innerText = todoList[i].description;
+
+    todoCheckboxElement.addEventListener('change', () => {
+      if (todoCheckboxElement.checked) {
+        todoDescriptionElement.classList.add('strike');
+      } else todoDescriptionElement.classList.remove('strike');
+      toggleToDoStatus(todoList[i]);
+    });
 
     const actionBtns = document.createElement('div');
     actionBtns.classList.add('action-btn');
@@ -162,5 +174,5 @@ const saveEdit = () => {
 const getIsEditing = () => isEditing;
 
 export {
-  getStorageData, clearCompletedList, addTodo, saveEdit, displayToDo, getIsEditing,
+  getStorageData, clearCompletedList, clearCheckBox, addTodo, saveEdit, displayToDo, getIsEditing,
 };

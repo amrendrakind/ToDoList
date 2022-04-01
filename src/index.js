@@ -1,6 +1,6 @@
 import './style.css';
 import {
-  getStorageData, clearCompletedList, addTodo, saveEdit, displayToDo, getIsEditing,
+  getStorageData, clearCompletedList, clearCheckBox, addTodo, saveEdit, displayToDo, getIsEditing,
 } from './module/addRemove.js';
 
 window.onload = () => {
@@ -10,6 +10,7 @@ window.onload = () => {
 
 const refreshBtn = document.querySelector('.refresh-btn');
 refreshBtn.addEventListener('click', () => {
+  clearCheckBox();
   window.location.reload();
 });
 
