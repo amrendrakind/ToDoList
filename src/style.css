@@ -71,3 +71,15 @@ button:hover {
   align-items: center;
   gap: 8px;
 }
+
+.container .edit-btn {
+  color: rgb(0, 150, 0);
+}
+
+.container .delete-btn i {
+  color: rgb(200, 0, 0);
+}
+
+.hide {
+  display: none;
+}
