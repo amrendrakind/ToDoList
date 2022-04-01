@@ -25,7 +25,7 @@ const editTodoList = (todo) => {
 };
 
 const removeTodoList = (indexID) => {
-  todoList.splice((indexID - 1), 1);
+  todoList = todoList.filter((ind) => ind.index !== indexID);
   todoList = todoList.map(
     (todo, index) => (
       { completed: todo.completed, description: todo.description, index: index + 1 }
@@ -106,7 +106,7 @@ const addTodo = () => {
     const completed = false;
     const description = desc.value;
     const index = todoList.length + 1;
-    todoList.unshift({ completed, description, index });
+    todoList.push({ completed, description, index });
     displayToDo();
     saveData();
     desc.value = null;
