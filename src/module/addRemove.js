@@ -35,6 +35,16 @@ const removeTodoList = (indexID) => {
   displayToDo();
 };
 
+const toggleToDoStatus = (todo) => {
+  todoList = todoList.map((todoItem) => {
+    if (todoItem.index === todo.index) {
+      return { ...todo, completed: !todo.completed };
+    }
+    return todoItem;
+  });
+  saveData();
+};
+
 const displayToDo = () => {
   const todoListElement = document.querySelector('.todo-container');
   todoListElement.innerHTML = '';
@@ -50,6 +60,11 @@ const displayToDo = () => {
     todoCheckboxElement.setAttribute('type', 'checkbox');
     todoCheckboxElement.setAttribute('name', 'checkbox');
     todoCheckboxElement.setAttribute('value', todoList[i].index);
+    todoCheckboxElement.checked = todoList[i].completed;
+
+    todoContentElement.addEventListener('change', () => {
+      toggleToDoStatus(todoList[i]);
+    });
 
     const todoDescriptionElement = document.createElement('p');
     todoDescriptionElement.innerText = todoList[i].description;
