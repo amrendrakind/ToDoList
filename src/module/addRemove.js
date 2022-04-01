@@ -45,6 +45,16 @@ const toggleToDoStatus = (todo) => {
   saveData();
 };
 
+const clearCompletedList = () => {
+  const completedTodoList = todoList.filter((todo) => todo.completed);
+  if (completedTodoList.length > 0) {
+    completedTodoList.forEach((todo) => {
+      removeTodoList(todo.index);
+      clearCompletedList();
+    });
+  }
+};
+
 const displayToDo = () => {
   const todoListElement = document.querySelector('.todo-container');
   todoListElement.innerHTML = '';
@@ -152,5 +162,5 @@ const saveEdit = () => {
 const getIsEditing = () => isEditing;
 
 export {
-  getStorageData, addTodo, saveEdit, displayToDo, getIsEditing,
+  getStorageData, clearCompletedList, addTodo, saveEdit, displayToDo, getIsEditing,
 };

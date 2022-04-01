@@ -83,3 +83,7 @@ button:hover {
 .hide {
   display: none;
 }
+
+.strike {
+  text-decoration: line-through;
+}
